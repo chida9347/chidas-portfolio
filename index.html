@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>N Chidananda — AI/ML Engineer in training</title>
+<meta name="description" content="Portfolio of N Chidananda, CSE (AI & ML) student at Kalasalingam University.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FAF9F6;
+    --bg-raised: #FFFFFF;
+    --ink: #1A1A1A;
+    --ink-soft: #5C5A54;
+    --line: #E5E3DD;
+    --accent: #4B5EAA;
+    --accent-soft: #EEF0F8;
+    --accent-deep: #313F7C;
+    --mono: 'JetBrains Mono', monospace;
+    --serif: 'Fraunces', serif;
+    --sans: 'Inter', sans-serif;
+    --maxw: 1040px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:inherit; text-decoration:none;}
+
+  ::selection{background:var(--accent); color:#fff;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(250,249,246,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:64px;
+  }
+  .logo{
+    font-family:var(--mono); font-weight:600; font-size:15px;
+    letter-spacing:0.02em;
+  }
+  .logo span{color:var(--accent);}
+  .navlinks{display:flex; gap:32px; font-size:14px; color:var(--ink-soft);}
+  .navlinks a{position:relative; padding:4px 0; transition:color .2s;}
+  .navlinks a:hover{color:var(--ink);}
+  .navlinks a:focus-visible, a:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px;}
+  .navlinks a::after{
+    content:''; position:absolute; left:0; bottom:0; height:1px; width:0;
+    background:var(--accent); transition:width .25s ease;
+  }
+  .navlinks a:hover::after{width:100%;}
+  .navcta{
+    font-family:var(--mono); font-size:13px; padding:8px 16px;
+    border:1px solid var(--ink); border-radius:99px;
+    transition:background .2s, color .2s;
+  }
+  .navcta:hover{background:var(--ink); color:var(--bg);}
+  .navtoggle{display:none;}
+
+  @media (max-width:720px){
+    .navlinks{display:none;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:96px 0 80px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute; top:-120px; right:-120px;
+    width:420px; height:420px; border-radius:50%;
+    background:radial-gradient(circle, var(--accent-soft) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .eyebrow{
+    font-family:var(--mono); font-size:13px; color:var(--accent-deep);
+    text-transform:uppercase; letter-spacing:0.12em;
+    display:flex; align-items:center; gap:10px; margin-bottom:24px;
+  }
+  .eyebrow .dot{
+    width:8px; height:8px; border-radius:50%; background:var(--accent);
+    animation:pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1; transform:scale(1);}
+    50%{opacity:.4; transform:scale(.7);}
+  }
+  h1{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(40px, 6.4vw, 76px);
+    line-height:1.04;
+    letter-spacing:-0.01em;
+    max-width:880px;
+  }
+  h1 em{
+    font-style:italic; font-weight:500; color:var(--accent-deep);
+  }
+  .hero-sub{
+    margin-top:28px;
+    font-size:clamp(16px, 2vw, 19px);
+    color:var(--ink-soft);
+    max-width:560px;
+    line-height:1.65;
+  }
+  .hero-row{
+    margin-top:44px;
+    display:flex; align-items:center; gap:20px; flex-wrap:wrap;
+  }
+  .btn-primary{
+    font-family:var(--mono); font-size:14px;
+    background:var(--ink); color:var(--bg);
+    padding:13px 24px; border-radius:99px;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:transform .2s ease, background .2s ease;
+  }
+  .btn-primary:hover{background:var(--accent-deep); transform:translateY(-2px);}
+  .btn-ghost{
+    font-family:var(--mono); font-size:14px; color:var(--ink-soft);
+    border-bottom:1px solid var(--line);
+    padding-bottom:2px;
+    transition:color .2s, border-color .2s;
+  }
+  .btn-ghost:hover{color:var(--ink); border-color:var(--ink);}
+
+  .hero-meta{
+    margin-top:64px;
+    display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+    border-top:1px solid var(--line);
+    max-width:640px;
+  }
+  .hero-meta div{
+    padding:18px 0 0; border-right:1px solid var(--line);
+  }
+  .hero-meta div:last-child{border-right:none;}
+  .hero-meta .num{
+    font-family:var(--mono); font-size:13px; color:var(--accent-deep); display:block; margin-bottom:4px;
+  }
+  .hero-meta .label{font-size:14px; color:var(--ink-soft);}
+
+  /* ---------- SECTION SCAFFOLDING ---------- */
+  section{padding:88px 0;}
+  section + section{border-top:1px solid var(--line);}
+  .sec-head{
+    display:flex; align-items:baseline; justify-content:space-between;
+    margin-bottom:48px; gap:24px; flex-wrap:wrap;
+  }
+  .sec-tag{
+    font-family:var(--mono); font-size:13px; color:var(--accent-deep);
+    text-transform:uppercase; letter-spacing:0.1em;
+  }
+  h2{
+    font-family:var(--serif); font-weight:600;
+    font-size:clamp(28px, 4vw, 40px);
+    letter-spacing:-0.01em;
+  }
+  .sec-desc{
+    color:var(--ink-soft); max-width:420px; font-size:15px; text-align:right;
+  }
+  @media (max-width:720px){
+    .sec-desc{text-align:left;}
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:64px; align-items:start;
+  }
+  .about-grid p{color:var(--ink-soft); margin-bottom:18px; font-size:16.5px; line-height:1.75;}
+  .about-grid p strong{color:var(--ink); font-weight:600;}
+  .focus-list{
+    border:1px solid var(--line); border-radius:14px; background:var(--bg-raised);
+    overflow:hidden;
+  }
+  .focus-list .fl-head{
+    font-family:var(--mono); font-size:12px; text-transform:uppercase; letter-spacing:.1em;
+    color:var(--ink-soft); padding:16px 20px; border-bottom:1px solid var(--line);
+  }
+  .focus-item{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:16px 20px; border-bottom:1px solid var(--line); font-size:14.5px;
+  }
+  .focus-item:last-child{border-bottom:none;}
+  .focus-item span:first-child{color:var(--ink);}
+  .focus-item span:last-child{font-family:var(--mono); font-size:12px; color:var(--ink-soft);}
+
+  /* ---------- SKILLS ---------- */
+  .skill-rail{
+    display:flex; flex-wrap:wrap; gap:10px;
+  }
+  .chip{
+    font-family:var(--mono); font-size:13.5px;
+    border:1px solid var(--line); background:var(--bg-raised);
+    padding:9px 16px; border-radius:99px;
+    color:var(--ink); transition:border-color .2s, background .2s;
+  }
+  .chip:hover{border-color:var(--accent); background:var(--accent-soft);}
+  .chip.weak{color:var(--ink-soft);}
+
+  /* ---------- PROJECTS (signature: build-log rail) ---------- */
+  .log{
+    position:relative;
+    padding-left:28px;
+  }
+  .log::before{
+    content:'';
+    position:absolute; left:5px; top:6px; bottom:6px; width:1px;
+    background:var(--line);
+  }
+  .entry{
+    position:relative; padding-bottom:56px;
+  }
+  .entry:last-child{padding-bottom:0;}
+  .entry::before{
+    content:'';
+    position:absolute; left:-28px; top:6px;
+    width:11px; height:11px; border-radius:50%;
+    background:var(--bg); border:2px solid var(--accent);
+  }
+  .entry-tag{
+    font-family:var(--mono); font-size:12px; color:var(--accent-deep);
+    text-transform:uppercase; letter-spacing:.08em; margin-bottom:8px; display:block;
+  }
+  .entry h3{
+    font-family:var(--serif); font-weight:600; font-size:24px; margin-bottom:10px;
+  }
+  .entry p{color:var(--ink-soft); font-size:15.5px; line-height:1.7; max-width:640px; margin-bottom:16px;}
+  .entry-stack{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;}
+  .entry-stack span{
+    font-family:var(--mono); font-size:12px; color:var(--ink-soft);
+    border:1px solid var(--line); padding:5px 11px; border-radius:6px;
+  }
+  .entry-link{
+    font-family:var(--mono); font-size:13.5px; color:var(--ink);
+    border-bottom:1px solid var(--ink); padding-bottom:1px;
+    display:inline-flex; align-items:center; gap:6px;
+    transition:color .2s, border-color .2s;
+  }
+  .entry-link:hover{color:var(--accent-deep); border-color:var(--accent-deep);}
+  .entry-note{
+    margin-top:14px; font-size:13.5px; color:var(--ink-soft);
+    background:var(--accent-soft); border-radius:8px; padding:10px 14px;
+    display:inline-block;
+  }
+
+  /* ---------- CERTIFICATIONS ---------- */
+  .cert-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden;
+  }
+  .cert{
+    background:var(--bg-raised); padding:24px;
+    display:flex; flex-direction:column; gap:10px;
+    transition:background .2s;
+  }
+  .cert:hover{background:var(--accent-soft);}
+  .cert .cert-date{font-family:var(--mono); font-size:12px; color:var(--accent-deep);}
+  .cert .cert-title{font-weight:600; font-size:15px; line-height:1.4;}
+  .cert .cert-issuer{font-size:13.5px; color:var(--ink-soft);}
+  @media (max-width:820px){
+    .cert-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:560px){
+    .cert-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- EDUCATION ---------- */
+  .edu-card{
+    border:1px solid var(--line); border-radius:14px; background:var(--bg-raised);
+    padding:32px; display:flex; justify-content:space-between; align-items:flex-start;
+    gap:24px; flex-wrap:wrap;
+  }
+  .edu-card h3{font-family:var(--serif); font-size:22px; font-weight:600; margin-bottom:6px;}
+  .edu-card .edu-sub{color:var(--ink-soft); font-size:14.5px;}
+  .edu-card .edu-years{
+    font-family:var(--mono); font-size:13px; color:var(--accent-deep);
+    border:1px solid var(--line); padding:8px 14px; border-radius:99px; white-space:nowrap;
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-wrap{
+    text-align:center; padding:96px 0 110px;
+  }
+  .contact-wrap .sec-tag{display:block; margin-bottom:20px;}
+  .contact-wrap h2{font-size:clamp(32px,5.5vw,56px); max-width:680px; margin:0 auto 28px;}
+  .contact-wrap p{color:var(--ink-soft); max-width:460px; margin:0 auto 40px; font-size:16px;}
+  .contact-links{
+    display:flex; justify-content:center; gap:16px; flex-wrap:wrap;
+  }
+
+  footer{
+    border-top:1px solid var(--line); padding:28px 0;
+  }
+  footer .wrap{
+    display:flex; justify-content:space-between; align-items:center;
+    font-family:var(--mono); font-size:12.5px; color:var(--ink-soft); flex-wrap:wrap; gap:10px;
+  }
+
+  @media (max-width:820px){
+    .about-grid{grid-template-columns:1fr;}
+    .hero-meta{grid-template-columns:1fr 1fr; max-width:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="logo">N.<span>Chidananda</span></div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#education">Education</a>
+    </div>
+    <a class="navcta" href="#contact">Say hello →</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow"><span class="dot"></span> Open to internships &amp; collaborations</div>
+      <h1>Building small,<br> careful systems in <em>AI &amp; ML.</em></h1>
+      <p class="hero-sub">I'm N Chidananda — a CSE (AI &amp; ML) student at Kalasalingam University, learning by shipping: prediction models, secure-auth systems, and the occasional desktop app nobody asked for but everybody needed.</p>
+      <div class="hero-row">
+        <a class="btn-primary" href="#projects">View projects ↓</a>
+        <a class="btn-ghost" href="mailto:chida6281@gmail.com">chida6281@gmail.com</a>
+      </div>
+      <div class="hero-meta">
+        <div><span class="num">2024–28</span><span class="label">B.Tech CSE (AI &amp; ML)</span></div>
+        <div><span class="num">03</span><span class="label">Projects shipped</span></div>
+        <div><span class="num">07</span><span class="label">Certifications earned</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="sec-tag">001 — About</div>
+          <h2>Still early. Already building.</h2>
+        </div>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p>I'm in my second year of a <strong>B.Tech in Computer Science (AI &amp; ML)</strong> at Kalasalingam University, and most of what I know so far has come from building things end to end rather than just reading about them — a graphical login system here, a behavioral risk model there.</p>
+          <p>I move comfortably across <strong>Python, C, Java, and SQL</strong>, and I'm especially drawn to the parts of computer science where logic meets judgment: security mechanisms, predictive modeling, and interfaces that have to stay usable under pressure.</p>
+          <p>Outside coursework, I show up for hackathons and project showcases — not always to win, but to get faster at turning an idea into something that runs.</p>
+        </div>
+        <div class="focus-list">
+          <div class="fl-head">Currently exploring</div>
+          <div class="focus-item"><span>Applied Machine Learning</span><span>ML</span></div>
+          <div class="focus-item"><span>Secure Authentication Systems</span><span>SEC</span></div>
+          <div class="focus-item"><span>Predictive &amp; Behavioral Modeling</span><span>R / GLM</span></div>
+          <div class="focus-item"><span>Data Structures in Practice</span><span>JAVA</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="sec-tag">002 — Toolkit</div>
+          <h2>Languages &amp; tools</h2>
+        </div>
+        <p class="sec-desc">The stack I reach for most, roughly in order of comfort.</p>
+      </div>
+      <div class="skill-rail">
+        <span class="chip">Python</span>
+        <span class="chip">Machine Learning</span>
+        <span class="chip">C</span>
+        <span class="chip">Java</span>
+        <span class="chip">SQL</span>
+        <span class="chip">R / Shiny</span>
+        <span class="chip">Flask</span>
+        <span class="chip">HTML / CSS / JS</span>
+        <span class="chip weak">Excel</span>
+        <span class="chip weak">Git &amp; GitHub</span>
+        <span class="chip weak">OOP &amp; Swing</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="sec-tag">003 — Build log</div>
+          <h2>Selected projects</h2>
+        </div>
+        <p class="sec-desc">Three projects, three different problems — security, healthcare analytics, and everyday campus friction.</p>
+      </div>
+
+      <div class="log">
+
+        <div class="entry">
+          <span class="entry-tag">Security · Flask</span>
+          <h3>Graphical Password Authentication System</h3>
+          <p>A login system that replaces typed passwords with an image-selection sequence, then layers on OTP verification, login-attempt monitoring, and dynamic image distortion to resist shoulder-surfing and brute-force attacks.</p>
+          <div class="entry-stack">
+            <span>Python · Flask</span>
+            <span>SQLite</span>
+            <span>HTML/CSS/JS</span>
+          </div>
+          <a class="entry-link" href="https://github.com/chida9347/graphical-password-auth" target="_blank" rel="noopener">View on GitHub →</a>
+          <div class="entry-note">Includes a login-attempt dashboard and account lockout after repeated failures</div>
+        </div>
+
+        <div class="entry">
+          <span class="entry-tag">Healthcare Analytics · R</span>
+          <h3>Early Risk Indicator Prediction for ASD</h3>
+          <p>A non-diagnostic Shiny application that estimates Autism Spectrum Disorder risk probability from behavioral and demographic screening data, with a deliberate basic-vs-advanced model toggle to show the accuracy/realism trade-off.</p>
+          <div class="entry-stack">
+            <span>R</span>
+            <span>Shiny</span>
+            <span>Logistic Regression (GLM)</span>
+          </div>
+          <a class="entry-link" href="https://github.com/chida9347/asd-risk-prediction-r" target="_blank" rel="noopener">View on GitHub →</a>
+          <div class="entry-note">Basic model ~68% accuracy (demographics only) · Advanced model ~99% (+ behavioral indicators) — built with an explicit ethical disclaimer</div>
+        </div>
+
+        <div class="entry">
+          <span class="entry-tag">Desktop App · Java</span>
+          <h3>Campus Lost &amp; Found Portal</h3>
+          <p>A Java Swing desktop application that digitizes the lost-and-found process on campus — reporting, searching, and claiming items — replacing an entirely manual, easy-to-lose-track-of system.</p>
+          <div class="entry-stack">
+            <span>Core Java</span>
+            <span>Swing / AWT</span>
+            <span>File-based storage</span>
+          </div>
+          <a class="entry-link" href="https://github.com/chida9347/Campus-Lost-Found-Portal" target="_blank" rel="noopener">View on GitHub →</a>
+          <div class="entry-note">Includes authentication, profile management, and a path to MySQL via JDBC</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="sec-tag">004 — Proof of work</div>
+          <h2>Certifications &amp; hackathons</h2>
+        </div>
+        <p class="sec-desc">Coursework certificates and competitive events from the past year.</p>
+      </div>
+      <div class="cert-grid">
+        <div class="cert">
+          <span class="cert-date">May 2025</span>
+          <span class="cert-title">Python Programming</span>
+          <span class="cert-issuer">CodeTantra · Kalasalingam University</span>
+        </div>
+        <div class="cert">
+          <span class="cert-date">Oct 2025</span>
+          <span class="cert-title">Artificial Intelligence — Beginners Guide</span>
+          <span class="cert-issuer">SimpliLearn SkillUp</span>
+        </div>
+        <div class="cert">
+          <span class="cert-date">Oct 2025</span>
+          <span class="cert-title">Excel: Beginner to Expert</span>
+          <span class="cert-issuer">Online Course</span>
+        </div>
+        <div class="cert">
+          <span class="cert-date">Oct 2025</span>
+          <span class="cert-title">IEEE RAS Project Showcase 2.0</span>
+          <span class="cert-issuer">CSE–KARE · VINTRA 2025</span>
+        </div>
+        <div class="cert">
+          <span class="cert-date">Oct–Nov 2025</span>
+          <span class="cert-title">IEEE Code Blast</span>
+          <span class="cert-issuer">CSE–KARE · VINTRA 2025</span>
+        </div>
+        <div class="cert">
+          <span class="cert-date">2025</span>
+          <span class="cert-title">TechFrontier Hackathon — 24hr</span>
+          <span class="cert-issuer">OWASP &amp; CyberNerds · KARE, w/ EC-Council</span>
+        </div>
+        <div class="cert">
+          <span class="cert-date">Mar 2026</span>
+          <span class="cert-title">Quantum Shield — Hackathon</span>
+          <span class="cert-issuer">KALAM 2026 · Sri Shakthi Institute</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="sec-tag">005 — Education</div>
+          <h2>Academic background</h2>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div>
+          <h3>Kalasalingam University</h3>
+          <p class="edu-sub">B.Tech, Computer Science &amp; Engineering — Artificial Intelligence &amp; Machine Learning</p>
+        </div>
+        <span class="edu-years">2024 — 2028</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-wrap">
+      <span class="sec-tag">006 — Get in touch</span>
+      <h2>Have a project, internship,<br>or just a good problem to share?</h2>
+      <p>I reply fastest by email — usually within a day or two.</p>
+      <div class="contact-links">
+        <a class="btn-primary" href="mailto:chida6281@gmail.com">chida6281@gmail.com</a>
+        <a class="btn-ghost" href="https://www.linkedin.com/in/nchidananda-056358335" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn-ghost" href="https://github.com/chida9347" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 N Chidananda</span>
+    <span>Anantapur, Andhra Pradesh, India</span>
+  </div>
+</footer>
+
+</body>
+</html>
