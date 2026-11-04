@@ -1,69 +1,71 @@
 # Chida's Portfolio
 
-My personal portfolio website — built to showcase who I am, what I'm learning, and the projects I've shipped as a CSE (AI & ML) student.
+The personal portfolio of **N. Chidananda (Chida)**, a B.Tech Computer Science and Engineering student specialising in Artificial Intelligence and Data Science at Kalasalingam Academy of Research and Education.
 
-**Live site:** [chida9347.github.io/chidas-portfolio](https://chida9347.github.io/chidas-portfolio/)
-
-![HTML](https://img.shields.io/badge/HTML-100%25-orange?style=flat-square)
-![Status](https://img.shields.io/badge/status-active-brightgreen?style=flat-square)
+**Live site:** [chidas-portfolio.vercel.app](https://chidas-portfolio.vercel.app/)
 
 ## About
 
-This is a single-page portfolio covering:
+This single-page portfolio presents:
 
-- **About** — who I am and what I'm focused on right now
-- **Skills** — the languages and tools I use most
-- **Projects** — a build-log of things I've actually shipped
-- **Certifications** — coursework and hackathons from the past year
-- **Education** — my degree program
-- **Contact** — the easiest ways to reach me
+- Career interests in software engineering, backend development, AI, machine learning, and data science
+- Academic background and current CGPA
+- Technical skills across programming, machine learning, development tools, and core computer science
+- Selected projects in deep learning, applied machine learning, and security
+- Achievements, hackathons, certifications, and coding practice
+- GitHub, CodeChef, LinkedIn, and email contact details
 
-## Featured projects
+## Selected projects
 
 | Project | Description | Stack |
 |---|---|---|
-| [Graphical Password Authentication](https://github.com/chida9347/graphical-password-auth) | Image-sequence login with OTP verification and anti-shoulder-surfing distortion | Python, Flask, SQLite |
-| [ASD Risk Prediction](https://github.com/chida9347/asd-risk-prediction-r) | Non-diagnostic Shiny app estimating Autism Spectrum Disorder risk from behavioral data | R, Shiny, GLM |
-| [Campus Lost & Found Portal](https://github.com/chida9347/Campus-Lost-Found-Portal) | Desktop app for reporting, searching, and claiming lost campus items | Java, Swing |
+| Video-Based Deep Learning for Assessing Collaborative Learning Quality | Classifies group engagement as Low, Medium, or High from classroom video using CNN and temporal sequence models | Python, CNN, LSTM, GRU, MobileNetV2, Streamlit |
+| [Autism-Related Behavioral Risk Indicators](https://github.com/chida9347/asd-risk-prediction-r) | Educational machine-learning project that analyses questionnaire data with interpretable statistical models | R, Logistic Regression, Shiny |
+| [Graphical Password Authentication](https://github.com/chida9347/graphical-password-auth) | Image-sequence login with OTP verification, login-attempt tracking, and anti-shoulder-surfing distortion | Python, Flask, SQLite, HTML, CSS, JavaScript |
+
+> The autism-related risk project is for research and education only. It is not a medical diagnostic tool.
 
 ## Built with
 
-- Plain HTML, CSS, and JavaScript — no framework, no build step
+- Semantic HTML, CSS, and vanilla JavaScript
+- Responsive layout with light and dark theme support
 - [Fraunces](https://fonts.google.com/specimen/Fraunces), [Inter](https://fonts.google.com/specimen/Inter), and [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) via Google Fonts
-- Deployed with [GitHub Pages](https://pages.github.com/)
+- No framework, package manager, or build step required
+- Deployed on [Vercel](https://vercel.com/)
 
 ## Running locally
 
-No build tools needed — it's a static site.
+Clone the repository:
 
 ```bash
 git clone https://github.com/chida9347/chidas-portfolio.git
 cd chidas-portfolio
 ```
 
-Then just open `index.html` in your browser, or serve it locally:
+Open `index.html` directly in a browser, or serve it locally:
 
 ```bash
 python3 -m http.server 8000
 ```
 
-and visit `http://localhost:8000`.
+Then visit [http://localhost:8000](http://localhost:8000).
 
 ## Deployment
 
-This site is deployed via GitHub Pages from the `main` branch.
+The site is deployed from the `main` branch through Vercel. For a personal deployment:
 
-To enable it on your own fork:
-1. Go to **Settings → Pages**
-2. Under **Source**, select the `main` branch and `/ (root)` folder
-3. Save — your site will be live at `https://<your-username>.github.io/<repo-name>/` within a minute or two
+1. Import the repository into Vercel.
+2. Keep the framework preset as **Other**.
+3. Use the repository root as the project directory.
+4. Deploy — no build command or output directory is required.
 
 ## Contact
 
 - Email: [chida6281@gmail.com](mailto:chida6281@gmail.com)
-- LinkedIn: [nchidananda-056358335](https://www.linkedin.com/in/nchidananda-056358335)
+- LinkedIn: [N. Chidananda](https://www.linkedin.com/in/chidananda-n/)
 - GitHub: [@chida9347](https://github.com/chida9347)
+- CodeChef: [@chida_7](https://www.codechef.com/users/chida_7)
 
 ---
 
-© 2026 N Chidananda
+© 2026 N. Chidananda
